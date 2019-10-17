@@ -12,7 +12,7 @@ test <- read.csv('https://raw.githubusercontent.com/raqueeb/mltraining/master/ML
 
 library(rpart)
 
-# 
+# create a model
 
 model <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + 
                  Fare + Embarked, data=train, method="class")
@@ -21,3 +21,6 @@ model <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch +
 my_predict <- predict(model, test, type = "class")
 test_df <- data.frame(PassengerId = test$PassengerId,
                   Name= test$Name, Survived = my_predict) 
+
+
+
